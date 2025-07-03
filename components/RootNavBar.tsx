@@ -3,6 +3,8 @@ import {Link, useLoaderData, useLocation, useNavigate, useParams} from "react-ro
 import {logoutUser} from "~/appwrite/auth";
 import {cn} from "~/lib/utils";
 
+
+
 const RootNavbar = () => {
     const navigate = useNavigate();
     const location = useLocation()
@@ -38,6 +40,9 @@ const RootNavbar = () => {
                             className="size-6 rotate-180"
                         />
                     </button>
+
+
+
                 </aside>
             </header>
         </nav>

@@ -51,7 +51,7 @@ export const clientLoader = async () => {
         allTrips,
         userGrowth,
         tripsByTravelStyle,
-        allUsers: mappedUsers
+        allUsers: mappedUsers,
     }
 }
 

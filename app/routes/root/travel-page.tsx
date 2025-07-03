@@ -1,4 +1,4 @@
-import {Link, type LoaderFunctionArgs, useSearchParams} from "react-router";
+import {Link, type LoaderFunctionArgs, useSearchParams,useNavigate} from "react-router";
 import {ButtonComponent} from "@syncfusion/ej2-react-buttons";
 import {cn, parseTripData} from "~/lib/utils";
 import {Header, TripCard} from "../../../components";
@@ -56,7 +56,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 
 const TravelPage = ({ loaderData }: Route.ComponentProps) => {
     const trips = loaderData.trips as Trip[] | [];
-
+    const navigate=useNavigate();
     const [searchParams] = useSearchParams();
     const initialPage = Number(searchParams.get('page') || '1')
 
@@ -147,6 +147,14 @@ const TravelPage = ({ loaderData }: Route.ComponentProps) => {
                             activityCount={500}
                         />
                     </div>
+                </div>
+            </section>
+
+            <section>
+                <div>
+                <button className=" cursor-pointer mx-auto block mt-8 text-2xl font-bold bg-blue-500 text-white px-6 py-2 rounded-lg" onClick={() => {navigate('/dashboard')}}>
+                    <h1 className="text-dark-100">DashBoard</h1>
+                </button>
                 </div>
             </section>
 
